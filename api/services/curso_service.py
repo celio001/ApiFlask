@@ -6,3 +6,21 @@ def cadastrar_curso(curso):
     db.session.add(curso_bd)
     db.session.commit()
     return curso_bd
+
+def listar_cursos():
+    cursos = curso_model.Curso.query.all()
+    return cursos
+
+def lista_curso_id(id):
+    curso = curso_model.Curso.query.filter_by(id=id).first()
+    return curso
+
+def atualizar_curso(curso_anterior, curso_novo):
+    curso_anterior.nome = curso_novo.nome
+    curso_anterior.descricao = curso_novo.descricao
+    curso_anterior.data_publicacao = curso_novo.data_publicacao
+    db.session.commit()
+
+def remover_curso(curso):
+    db.session.delete(curso)
+    db.session.commit()
