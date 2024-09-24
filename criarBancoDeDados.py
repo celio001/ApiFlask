@@ -14,11 +14,10 @@ try:
 
     # SQL para criar a tabela
     criar_tabela_sql = """
-    CREATE TABLE curso (
+    CREATE TABLE formacao (
         id INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(50) NOT NULL,
-        descricao VARCHAR(100) NOT NULL,
-        data_publicacao DATE NOT NULL
+        descricao VARCHAR(100) NOT NULL
     );
     """
 
